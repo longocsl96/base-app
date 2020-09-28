@@ -3,15 +3,14 @@ import customizer from './customizer/customizer'
 import auth from './auth/'
 import navbar from './navbar/'
 import { persistReducer } from 'redux-persist'
-import { CookieStorage } from 'redux-persist-cookie-storage'
-import Cookies from 'cookies-js'
+import sessionStorage from 'redux-persist/es/storage/session'
 
 const rootReducer = (appReducer) =>
   combineReducers({
     customizer,
     auth: persistReducer(
       {
-        storage: new CookieStorage(Cookies),
+        storage: sessionStorage,
         key: 'root'
       },
       auth

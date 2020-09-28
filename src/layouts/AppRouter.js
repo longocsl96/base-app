@@ -20,7 +20,8 @@ const AppRouter = ({
   message
 }) => {
   useEffect(() => {
-    checkLoginStatus(authToken)
+    const code = new URLSearchParams(document.location.search).get('code');
+    checkLoginStatus(code || authToken)
   }, [])
 
   const appMessage = {

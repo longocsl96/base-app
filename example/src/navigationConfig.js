@@ -16,7 +16,7 @@ const navigationConfig = [
     type: "external-link",
     icon: <Icon.Mail size={20} />,
     permissions: ["admin", "editor"],
-    navLink: "http://localhost:3002",
+    navLink: "http://localhost:3001",
   }
 
 ]

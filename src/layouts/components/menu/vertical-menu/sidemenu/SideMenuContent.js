@@ -11,7 +11,7 @@ class SideMenuContent extends React.Component {
     super(props)
     this.parentArr = []
     this.collapsedPath = null
-    this.navigationConfig = props.navigationConfig;
+    this.navigationConfig = props.navigationConfig
   }
 
   state = {
@@ -116,6 +116,10 @@ class SideMenuContent extends React.Component {
     }
   }
 
+  getExternalLink = (link) => {
+    return `${link}/?code=${this.props.currentUser.authToken}`
+  }
+
   render() {
     // Loop over sidebar items
     // eslint-disable-next-line
@@ -171,7 +175,11 @@ class SideMenuContent extends React.Component {
                 ? item.navLink
                 : ''
             }
-            href={item.type === 'external-link' ? item.navLink : ''}
+            href={
+              item.type === 'external-link'
+                ? this.getExternalLink(item.navLink)
+                : ''
+            }
             className={`d-flex ${
               item.badgeText
                 ? 'justify-content-between'
