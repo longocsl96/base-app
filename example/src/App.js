@@ -1,7 +1,7 @@
 import 'base-app/dist/index.css'
 import React, { lazy, Suspense, useEffect } from 'react'
 
-import { HttpClient, FallbackSpinner, FormattedMessage } from 'base-app'
+import { HttpClient, FallbackSpinner, FormattedMessage, useWindowDimensions } from 'base-app'
 import navigationConfig from './navigationConfig'
 import emails from './redux/reducers/calendar/index'
 
@@ -9,6 +9,9 @@ import { createBrowserHistory } from 'history'
 export let history = createBrowserHistory({ basename: '' })
 
 const App = () => {
+
+  const {width , height} = useWindowDimensions()
+
   const message = {
     en: {
       AppName: 'Home Page'

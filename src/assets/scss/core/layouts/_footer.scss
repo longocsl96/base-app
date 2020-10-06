@@ -10,7 +10,7 @@
 
 // Stick footer to the bottom of the page
 footer {
-  &.footer {
+  .footer {
     padding: $spacer ($spacer * 2.2);
 
     // a tag margin - PIXINVENT text
@@ -23,8 +23,30 @@ footer {
         margin-left: 0.5rem;
       }
     }
-    .scroll-top {
-      padding: 0.81rem 0.83rem;
+    
+  }
+
+  .scroll-top {
+    padding: 0.81rem 0.83rem;
+  }
+
+  .footer-mobile {
+    background-color: #f0f0f0;
+    font-size: 0.7rem;
+    display: flex;
+    height: 55px;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+
+    .main-button {
+      text-align: center;
+      margin-left: -30px;
+      height: 60px;
+      position: fixed;
+      bottom: 4%;
     }
   }
 

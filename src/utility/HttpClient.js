@@ -2,10 +2,14 @@ import Axios from 'axios'
 import React from 'react'
 import { AlertTriangle } from 'react-feather'
 import { toast } from 'react-toastify'
+import { cacheAdapterEnhancer, throttleAdapterEnhancer } from 'axios-extensions'
 
-const HttpClient = Axios.create()
-
-HttpClient.defaults.timeout = 5000
+const HttpClient = Axios.create({
+  timeout: 5000,
+  adapter: throttleAdapterEnhancer(
+    cacheAdapterEnhancer(Axios.defaults.adapter, { threshold: 15 * 60 * 1000 })
+  )
+})
 
 const errorMessage = (message) => {
   return (
@@ -27,6 +31,8 @@ export const setUpHttpClient = (store) => {
       return response
     },
     (e) => {
+      store.dispatch({ type: 'HIDE_LOADING_BAR' })
+      console.log(e)
       switch (e.response.status) {
         case 404:
           toast.error(errorMessage('API Not Found !'))
@@ -43,7 +49,6 @@ export const setUpHttpClient = (store) => {
         default:
           return e.response
       }
-      store.dispatch({ type: 'HIDE_LOADING_BAR' })
     }
   )
 }
