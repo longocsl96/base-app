@@ -1,0 +1,14 @@
+{
+    "name": "base-app",
+    "version": "1.0.0",
+    "description": "Base app",
+    "author": "longocsl96",
+    "license": "MIT",
+    "repository": "longocsl96/base-app",
+    "main": "index.js",
+    "module": "index.modern.js",
+    "engines": {
+      "node": ">=10"
+    }
+  }
+  
