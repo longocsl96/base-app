@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react'
+import React from 'react'
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware, compose } from 'redux'
 import createDebounce from 'redux-debounced'
@@ -15,7 +15,7 @@ import './index.scss'
 import 'react-toastify/dist/ReactToastify.css'
 import LoadingSpinner from './components/Loading-spinner'
 
-const App = ({ children, navigationConfig, appReducer, message }) => {
+const App = ({ children, appId, appReducer, message }) => {
   const middlewares = [thunk, createDebounce()]
   const composeEnhancers =
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
@@ -36,9 +36,8 @@ const App = ({ children, navigationConfig, appReducer, message }) => {
         <LoadingSpinner />
         <AppRouter
           message={message}
-          navigationConfig={navigationConfig}
-          children={children}
-        />
+          appId={appId}
+          children={children}/>
         <ToastContainer
           position='top-right'
           autoClose={5000}

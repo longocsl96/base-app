@@ -32,7 +32,6 @@ export const setUpHttpClient = (store) => {
     },
     (e) => {
       store.dispatch({ type: 'HIDE_LOADING_BAR' })
-      console.log(e)
       switch (e.response.status) {
         case 404:
           toast.error(errorMessage('API Not Found !'))

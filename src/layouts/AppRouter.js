@@ -9,10 +9,11 @@ import FullPageLayout from './FullpageLayout'
 import { IntlProviderWrapper } from '../utility/context/Internationalization'
 import messages_en from '../assets/data/locales/en.json'
 import messages_vi from '../assets/data/locales/vi.json'
+import getNativgationConfig from '../configs/navigationConfig'
 
 const AppRouter = ({
   checkLoginStatus,
-  navigationConfig,
+  appId,
   isAuthentication,
   loginAction,
   authToken,
@@ -25,8 +26,8 @@ const AppRouter = ({
   }, [])
 
   const appMessage = {
-    en: { ...messages_en, ...message.en },
-    vi: { ...messages_vi, ...message.vi }
+    en: { ...messages_en, [appId] :  {...message.en} },
+    vi: { ...messages_vi, [appId] :  {...message.vi} }
   }
 
   return (
@@ -37,7 +38,7 @@ const AppRouter = ({
             path='/'
             render={(props) =>
               isAuthentication ? (
-                <Layout navigationConfig={navigationConfig} {...props}>
+                <Layout navigationConfig={getNativgationConfig(appId)} {...props}>
                   {children}
                 </Layout>
               ) : (
