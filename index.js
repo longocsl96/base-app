@@ -2620,6 +2620,7 @@ var navigationConfig = [{
 var getNativgationConfig = function getNativgationConfig(appId) {
   return navigationConfig.map(function (item) {
     item.type = item.id === appId ? 'item' : 'external-link';
+    return item;
   });
 };
 

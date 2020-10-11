@@ -2362,6 +2362,7 @@ const navigationConfig = [{
 const getNativgationConfig = appId => {
   return navigationConfig.map(item => {
     item.type = item.id === appId ? 'item' : 'external-link';
+    return item;
   });
 };
 
