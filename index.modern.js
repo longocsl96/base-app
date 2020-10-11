@@ -2342,6 +2342,7 @@ const AppId = {
 
 const navigationConfig = [{
   id: AppId.HOME,
+  type: 'item',
   title: 'menu.home',
   icon: /*#__PURE__*/React.createElement(Home, {
     size: 20
@@ -2349,6 +2350,7 @@ const navigationConfig = [{
   navLink: '/'
 }, {
   id: AppId.USER,
+  type: 'item',
   title: 'menu.user',
   icon: /*#__PURE__*/React.createElement(Mail, {
     size: 20
