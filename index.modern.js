@@ -7,15 +7,15 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { persistReducer, persistStore } from 'redux-persist';
 import Axios from 'axios';
 import * as Icon from 'react-feather';
-import { AlertTriangle, Mail, Lock, Disc, Circle, X, ChevronRight, Search as Search$2, Bell, PlusSquare, DownloadCloud, CheckCircle, File, User as User$2, Power, Menu, Star, Heart, Home as Home$2, List as List$2, PlusCircle, Gift, MessageSquare, ArrowUp } from 'react-feather';
+import { AlertTriangle, Mail, Lock, Disc, Circle, X, ChevronRight, Search, Bell, PlusSquare, DownloadCloud, CheckCircle, File, User, Power, Menu, Star, Heart, Home, List, PlusCircle, Gift, MessageSquare, ArrowUp } from 'react-feather';
 import { toast, ToastContainer } from 'react-toastify';
 import { throttleAdapterEnhancer, cacheAdapterEnhancer } from 'axios-extensions';
 import { createBrowserHistory } from 'history';
 import sessionStorage from 'redux-persist/es/storage/session';
-import { Link as Link$1, Router, Switch as Switch$2, Route } from 'react-router-dom';
+import { Link as Link$1, Router, Switch, Route } from 'react-router-dom';
 import { FormattedMessage, IntlProvider } from 'react-intl';
 export { FormattedMessage } from 'react-intl';
-import { Row, Col, Card, CardHeader, CardTitle, CardBody, FormGroup, Input as Input$2, Label, Button, NavLink, Badge, Media, Dropdown, DropdownToggle, DropdownMenu, DropdownItem, NavItem, UncontrolledDropdown, Navbar as Navbar$3 } from 'reactstrap';
+import { Row, Col, Card, CardHeader, CardTitle, CardBody, FormGroup, Input, Label, Button, NavLink, Badge, Media, Dropdown, DropdownToggle, DropdownMenu, DropdownItem, NavItem, UncontrolledDropdown, Navbar as Navbar$1 } from 'reactstrap';
 import classnames from 'classnames';
 import Hammer from 'react-hammerjs';
 import PerfectScrollbar from 'react-perfect-scrollbar';
@@ -59,7 +59,6 @@ const setUpHttpClient = store => {
     store.dispatch({
       type: 'HIDE_LOADING_BAR'
     });
-    console.log(e);
 
     switch (e.response.status) {
       case 404:
@@ -391,7 +390,7 @@ const Login = ({
     className: "pt-1"
   }, /*#__PURE__*/React.createElement(FormGroup, {
     className: "form-label-group position-relative has-icon-left"
-  }, /*#__PURE__*/React.createElement(Input$2, {
+  }, /*#__PURE__*/React.createElement(Input, {
     type: "email",
     placeholder: "Email",
     value: username,
@@ -401,7 +400,7 @@ const Login = ({
     size: 15
   }), /*#__PURE__*/React.createElement(Label, null, "Email")), /*#__PURE__*/React.createElement(FormGroup, {
     className: "form-label-group position-relative has-icon-left"
-  }, /*#__PURE__*/React.createElement(Input$2, {
+  }, /*#__PURE__*/React.createElement(Input, {
     type: "password",
     placeholder: "Password",
     value: password,
@@ -1472,7 +1471,7 @@ const UserDropdown = props => {
     tag: "a",
     href: "#",
     onClick: e => handleNavigation(e, '/pages/profile')
-  }, /*#__PURE__*/React.createElement(User$2, {
+  }, /*#__PURE__*/React.createElement(User, {
     size: 14,
     className: "mr-50"
   }), /*#__PURE__*/React.createElement("span", {
@@ -1613,7 +1612,7 @@ class NavbarUser extends React.PureComponent {
       onClick: this.handleNavbarSearch
     }, /*#__PURE__*/React.createElement(NavLink, {
       className: "nav-link-search"
-    }, /*#__PURE__*/React.createElement(Search$2, {
+    }, /*#__PURE__*/React.createElement(Search, {
       size: 21,
       "data-tour": "search"
     })), /*#__PURE__*/React.createElement("div", {
@@ -1623,7 +1622,7 @@ class NavbarUser extends React.PureComponent {
       })
     }, /*#__PURE__*/React.createElement("div", {
       className: "search-input-icon"
-    }, /*#__PURE__*/React.createElement(Search$2, {
+    }, /*#__PURE__*/React.createElement(Search, {
       size: 17,
       className: "primary"
     })), /*#__PURE__*/React.createElement(Autocomplete, {
@@ -1877,7 +1876,7 @@ const ThemeNavbar = props => {
     className: "content-overlay"
   }), /*#__PURE__*/React.createElement("div", {
     className: "header-navbar-shadow"
-  }), /*#__PURE__*/React.createElement(Navbar$3, {
+  }), /*#__PURE__*/React.createElement(Navbar$1, {
     className: classnames('header-navbar navbar-expand-lg navbar navbar-with-menu navbar-shadow', {
       'navbar-light': props.navbarColor === 'default' || !colorsArr.includes(props.navbarColor),
       'navbar-dark': colorsArr.includes(props.navbarColor),
@@ -1980,10 +1979,10 @@ const Footer = props => {
   }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("a", {
     className: "tab-link",
     href: "#"
-  }, /*#__PURE__*/React.createElement(Home$2, null))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("a", {
+  }, /*#__PURE__*/React.createElement(Home, null))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("a", {
     className: "tab-link",
     href: "#"
-  }, /*#__PURE__*/React.createElement(List$2, null))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("a", {
+  }, /*#__PURE__*/React.createElement(List, null))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("a", {
     className: "tab-link",
     href: "#"
   }, /*#__PURE__*/React.createElement(PlusCircle, null))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("a", {
@@ -2315,464 +2314,58 @@ const FullPageLayout = ({
   }, children))))));
 };
 
-var Home = "Home";
-var App1 = "App";
-var Login$1 = "Login";
-var Apps = "Apps";
-var eCommerce = "eCommerce";
-var Email = "Email";
-var Chat = "Chat";
-var Todo = "Todo";
-var Calendar = "Calendar";
-var Ecommerce = "Ecommerce";
-var Shop = "Shop";
-var Checkout = "Checkout";
-var User = "User";
-var List = "List";
-var View = "View";
-var Edit = "Edit";
-var Content = "Content";
-var Grid = "Grid";
-var Typography = "Typography";
-var Colors = "Colors";
-var Icons = "Icons";
-var Feather = "Feather";
-var Cards = "Cards";
-var Basic = "Basic";
-var Advance = "Advance";
-var Statistics = "Statistics";
-var Tables = "Tables";
-var DataTables = "DataTables";
-var Components = "Components";
-var Alerts = "Alerts";
-var Buttons = "Buttons";
-var Breadcrumbs = "Breadcrumbs";
-var Carousel = "Carousel";
-var Collapse = "Collapse";
-var Dropdowns = "Dropdowns";
-var Modals = "Modals";
-var Pagination = "Pagination";
-var Navbar$1 = "Navbar";
-var Tooltips = "Tooltips";
-var Popovers = "Popovers";
-var Badges = "Badges";
-var Progress = "Progress";
-var Spinners = "Spinners";
-var Toasts = "Toasts";
-var Avatar = "Avatar";
-var Chips = "Chips";
-var Divider = "Divider";
-var Wizard = "Wizard";
-var Select = "Select";
-var Switch = "Switch";
-var Checkbox = "Checkbox";
-var Radio = "Radio";
-var Input = "Input";
-var Textarea = "Textarea";
-var Formik = "Formik";
-var Pages = "Pages";
-var Authentication = "Authentication";
-var Register = "Register";
-var Miscellaneous = "Miscellaneous";
-var Maintenance = "Maintenance";
-var Extensions = "Extensions";
-var Profile = "Profile";
-var FAQ = "FAQ";
-var Search = "Search";
-var Invoice = "Invoice";
-var Charts = "Charts";
-var Apex = "Apex";
-var ChartJS = "ChartJS";
-var Recharts = "Recharts";
-var Toastr = "Toastr";
-var Tour = "Tour";
-var Clipboard = "Clipboard";
-var Swiper = "Swiper";
-var Tree = "Tree";
-var I18n = "I18n";
-var Export = "Export";
-var Import = "Import";
-var Others = "Others";
-var Documentation = "Documentation";
-var text = "Cake sesame snaps cupcake gingerbread danish I love gingerbread. Apple pie pie jujubes chupa chups muffin halvah lollipop. Chocolate cake oat cake tiramisu marzipan sugar plum. Donut sweet pie oat cake dragée fruitcake cotton candy lemon drops.";
+var menu = {
+	home: "Home",
+	user: "User Management",
+	buyInsurance: "Buy Insurance"
+};
 var messages_en = {
-	"404": "404",
-	"500": "500",
-	Home: Home,
-	App1: App1,
-	Login: Login$1,
-	Apps: Apps,
-	eCommerce: eCommerce,
-	Email: Email,
-	Chat: Chat,
-	Todo: Todo,
-	Calendar: Calendar,
-	Ecommerce: Ecommerce,
-	Shop: Shop,
-	"Wish List": "Wish List",
-	"Product Detail": "Product Detail",
-	Checkout: Checkout,
-	User: User,
-	List: List,
-	View: View,
-	Edit: Edit,
-	"Starter Kit": "Starter Kit",
-	"1 Column": "1 Column",
-	"2 Columns": "2 Columns",
-	"Fixed Navbar": "Fixed Navbar",
-	"Floating Navbar": "Floating Navbar",
-	"Fixed Layout": "Fixed Layout",
-	"Static Layout": "Static Layout",
-	"Dark Layout": "Dark Layout",
-	"Light Layout": "Light Layout",
-	"UI Elements": "UI Elements",
-	Content: Content,
-	Grid: Grid,
-	Typography: Typography,
-	"Text Utilities": "Text Utilities",
-	"Syntax Highlighter": "Syntax Highlighter",
-	Colors: Colors,
-	"Data List": "Data List",
-	"List View": "List View",
-	"Thumb View": "Thumb View",
-	Icons: Icons,
-	Feather: Feather,
-	Cards: Cards,
-	Basic: Basic,
-	Advance: Advance,
-	Statistics: Statistics,
-	"Card Actions": "Card Actions",
-	Tables: Tables,
-	"Reactstrap Tables": "Reactstrap Tables",
-	"React Tables": "React Tables",
-	"agGrid Table": "agGrid Table",
-	DataTables: DataTables,
-	Components: Components,
-	Alerts: Alerts,
-	Buttons: Buttons,
-	Breadcrumbs: Breadcrumbs,
-	Carousel: Carousel,
-	Collapse: Collapse,
-	Dropdowns: Dropdowns,
-	"List Group": "List Group",
-	Modals: Modals,
-	Pagination: Pagination,
-	"Navs Component": "Navs Component",
-	Navbar: Navbar$1,
-	"Tabs Component": "Tabs Component",
-	"Pills Component": "Pills Component",
-	Tooltips: Tooltips,
-	Popovers: Popovers,
-	Badges: Badges,
-	"Pill Badges": "Pill Badges",
-	Progress: Progress,
-	"Media Objects": "Media Objects",
-	Spinners: Spinners,
-	Toasts: Toasts,
-	"Extra Components": "Extra Components",
-	Avatar: Avatar,
-	Chips: Chips,
-	Divider: Divider,
-	Wizard: Wizard,
-	"Forms & Tables": "Forms & Tables",
-	"Form Elements": "Form Elements",
-	Select: Select,
-	Switch: Switch,
-	Checkbox: Checkbox,
-	Radio: Radio,
-	Input: Input,
-	"Input Group": "Input Group",
-	"Number Input": "Number Input",
-	Textarea: Textarea,
-	"Date & Time Picker": "Date & Time Picker",
-	"Input Mask": "Input Mask",
-	"Form Layouts": "Form Layouts",
-	"Form Wizard": "Form Wizard",
-	Formik: Formik,
-	"Form Validation": "Form Validation",
-	Pages: Pages,
-	Authentication: Authentication,
-	Register: Register,
-	"Forgot Password": "Forgot Password",
-	"Reset Password": "Reset Password",
-	"Lock Screen": "Lock Screen",
-	Miscellaneous: Miscellaneous,
-	"Coming Soon": "Coming Soon",
-	"Error": "Error",
-	"Not Authorized": "Not Authorized",
-	Maintenance: Maintenance,
-	Extensions: Extensions,
-	Profile: Profile,
-	"Account Settings": "Account Settings",
-	FAQ: FAQ,
-	"Knowledge Base": "Knowledge Base",
-	Search: Search,
-	Invoice: Invoice,
-	"Charts & Maps": "Charts & Maps",
-	Charts: Charts,
-	Apex: Apex,
-	ChartJS: ChartJS,
-	Recharts: Recharts,
-	"Leaflet Maps": "Leaflet Maps",
-	"Sweet Alerts": "Sweet Alerts",
-	Toastr: Toastr,
-	"Rc Slider": "Rc Slider",
-	"File Uploader": "File Uploader",
-	"Wysiwyg Editor": "Wysiwyg Editor",
-	"Drag & Drop": "Drag & Drop",
-	Tour: Tour,
-	"Auto Complete": "Auto Complete",
-	Clipboard: Clipboard,
-	Swiper: Swiper,
-	"Context Menu": "Context Menu",
-	Tree: Tree,
-	I18n: I18n,
-	Export: Export,
-	Import: Import,
-	"Export Selected": "Export Selected",
-	"Access Control": "Access Control",
-	Others: Others,
-	"Menu Levels": "Menu Levels",
-	"Second Level": "Second Level",
-	"Third Level": "Third Level",
-	"Disabled Menu": "Disabled Menu",
-	Documentation: Documentation,
-	"Raise Support": "Raise Support",
-	"Change Log": "Change Log",
-	text: text
+	menu: menu
 };
 
-var Home$1 = "Trang chủ";
-var App1$1 = "Ứng dụng 1";
-var Login$2 = "Đăng nhập";
-var eCommerce$1 = "eCommerce";
-var Apps$1 = "Apps";
-var Email$1 = "Email";
-var Chat$1 = "Plaudern";
-var Todo$1 = "Machen";
-var Calendar$1 = "Kalandar";
-var Ecommerce$1 = "E-Commerce";
-var Shop$1 = "Geschäft";
-var Checkout$1 = "Auschecken";
-var User$1 = "Benutzerin";
-var List$1 = "Liste";
-var View$1 = "Aussicht";
-var Edit$1 = "Bearbeiten";
-var Content$1 = "Inhalt";
-var Grid$1 = "Gitter";
-var Typography$1 = "Typografie";
-var Colors$1 = "Farben";
-var Icons$1 = "Icons";
-var Feather$1 = "Feder";
-var Cards$1 = "Karten";
-var Basic$1 = "Basic";
-var Advance$1 = "Voraus";
-var Statistics$1 = "Statistiken";
-var Tables$1 = "Tabelles";
-var DataTables$1 = "DataTables";
-var Components$1 = "Komponenten";
-var Alerts$1 = "Warnungen";
-var Buttons$1 = "Tasten";
-var Breadcrumbs$1 = "Semmelbrösel";
-var Carousel$1 = "Karussell";
-var Collapse$1 = "Zusammenbruch";
-var Dropdowns$1 = "Dropdowns";
-var Modals$1 = "Modals";
-var Pagination$1 = "Seitennummerierung";
-var Navbar$2 = "Navbar";
-var Tooltips$1 = "Tooltips";
-var Popovers$1 = "Popovers";
-var Badges$1 = "Abzeichen";
-var Progress$1 = "Fortschritt";
-var Spinners$1 = "Spinners";
-var Toasts$1 = "Toast";
-var Avatar$1 = "Benutzerbild";
-var Chips$1 = "Chips";
-var Divider$1 = "Teiler";
-var Wizard$1 = "Magier";
-var Select$1 = "Wählen";
-var Switch$1 = "Schalter";
-var Checkbox$1 = "Kontrollkästchen";
-var Radio$1 = "Radio";
-var Input$1 = "Eingang";
-var Textarea$1 = "Textarea";
-var Formik$1 = "Formik";
-var Pages$1 = "Seiten";
-var Authentication$1 = "Authentifizierung";
-var Register$1 = "Registrieren";
-var Maintenance$1 = "Instandhaltung";
-var Profile$1 = "Profil";
-var Tree$1 = "Baum";
-var Miscellaneous$1 = "Sonstiges";
-var FAQ$1 = "FAQ";
-var Search$1 = "Suche";
-var Invoice$1 = "Rechnung";
-var Charts$1 = "Diagramme";
-var Apex$1 = "Apex";
-var ChartJS$1 = "ChartJS";
-var Recharts$1 = "Recharts";
-var Extensions$1 = "Erweiterungen";
-var Toastr$1 = "Toastr";
-var Tour$1 = "Tour";
-var Clipboard$1 = "Zwischenablage";
-var Swiper$1 = "Swiper";
-var I18n$1 = "I18n";
-var Export$1 = "Export";
-var Import$1 = "Importieren";
-var Others$1 = "Andere";
-var Documentation$1 = "Dokumentation";
-var text$1 = "Kuchen Sesam Snaps Cupcake Lebkuchen dänisch Ich liebe Lebkuchen. Apfelkuchen Jujubes Chupa Chups Muffin Halvah Lutscher. Schokoladenkuchen-Haferkuchen-Tiramisumarzipanzuckerpflaume. Donut süße Torte Haferkuchen Dragée Obstkuchen Zuckerwatte Zitronentropfen.";
+var menu$1 = {
+	home: "Trang chủ",
+	user: "Tài khoản",
+	buyInsurance: "Mua bảo hiểm"
+};
 var messages_vi = {
-	"404": "404",
-	"500": "500",
-	Home: Home$1,
-	App1: App1$1,
-	Login: Login$2,
-	eCommerce: eCommerce$1,
-	Apps: Apps$1,
-	Email: Email$1,
-	Chat: Chat$1,
-	Todo: Todo$1,
-	Calendar: Calendar$1,
-	Ecommerce: Ecommerce$1,
-	Shop: Shop$1,
-	"Wish List": "Wunschzettel",
-	"Product Detail": "Produktdetail",
-	Checkout: Checkout$1,
-	User: User$1,
-	List: List$1,
-	View: View$1,
-	Edit: Edit$1,
-	"Starter Kit": "Starter Kit",
-	"1 Column": "1 Spalte",
-	"2 Columns": "2 Spalten",
-	"Fixed Navbar": "Feste Navigationsleiste",
-	"Floating Navbar": "Schwimmende Navigationsleiste",
-	"Fixed Layout": "Festes Layout",
-	"Static Layout": "Statisches Layout",
-	"Dark Layout": "Dunkles Layout",
-	"Light Layout": "Helles Layout",
-	Content: Content$1,
-	Grid: Grid$1,
-	Typography: Typography$1,
-	"Text Utilities": "Textdienstprogramme",
-	"Syntax Highlighter": "Syntax Textmarker",
-	"Helper Classes": "Hilfsklassen",
-	Colors: Colors$1,
-	"Data List": "Datenliste",
-	"List View": "Listenansicht",
-	"Thumb View": "Daumenansicht",
-	Icons: Icons$1,
-	Feather: Feather$1,
-	"UI Elements": "UI-Elemente",
-	Cards: Cards$1,
-	Basic: Basic$1,
-	Advance: Advance$1,
-	Statistics: Statistics$1,
-	"Card Actions": "Kartenaktionen",
-	Tables: Tables$1,
-	"Reactstrap Tables": "Reactstrap Tabelles",
-	"React Tables": "React Tabelles",
-	"agGrid Table": "agGrid-Tabelle",
-	DataTables: DataTables$1,
-	Components: Components$1,
-	Alerts: Alerts$1,
-	Buttons: Buttons$1,
-	Breadcrumbs: Breadcrumbs$1,
-	Carousel: Carousel$1,
-	Collapse: Collapse$1,
-	Dropdowns: Dropdowns$1,
-	"List Group": "Listengruppe",
-	Modals: Modals$1,
-	Pagination: Pagination$1,
-	"Navs Component": "Navs-Komponente",
-	Navbar: Navbar$2,
-	"Tabs Component": "Registerkarten-Komponente",
-	"Pills Component": "Pillenkomponente",
-	Tooltips: Tooltips$1,
-	Popovers: Popovers$1,
-	Badges: Badges$1,
-	"Pill Badges": "Pillenabzeichen",
-	Progress: Progress$1,
-	"Media Objects": "Medienobjekte",
-	Spinners: Spinners$1,
-	Toasts: Toasts$1,
-	"Extra Components": "Zusätzliche Komponenten",
-	Avatar: Avatar$1,
-	Chips: Chips$1,
-	Divider: Divider$1,
-	Wizard: Wizard$1,
-	"Forms & Tables": "Formulare und Tabellen",
-	"Form Elements": "Formularelemente",
-	Select: Select$1,
-	Switch: Switch$1,
-	Checkbox: Checkbox$1,
-	Radio: Radio$1,
-	Input: Input$1,
-	"Input Group": "Eingabegruppen",
-	"Number Input": "Zahleneingabe",
-	Textarea: Textarea$1,
-	"Date & Time Picker": "Datums- und Uhrzeitauswahl",
-	"Input Mask": "Eingabemaske",
-	"Form Layouts": "Formularlayouts",
-	"Form Wizard": "Formzauberer",
-	"Form Validation": "Formularvalidierung",
-	Formik: Formik$1,
-	Pages: Pages$1,
-	Authentication: Authentication$1,
-	Register: Register$1,
-	"Forgot Password": "Passwort vergessen",
-	"Reset Password": "Passwort zurücksetzen",
-	"Lock Screen": "Bildschirm sperren",
-	"Coming Soon": "Demnächst",
-	"Error": "Error",
-	"Not Authorized": "Nicht berechtigt",
-	Maintenance: Maintenance$1,
-	Profile: Profile$1,
-	"Account Settings": "Account Einstellungen",
-	Tree: Tree$1,
-	Miscellaneous: Miscellaneous$1,
-	FAQ: FAQ$1,
-	"Knowledge Base": "Wissensbasis",
-	Search: Search$1,
-	Invoice: Invoice$1,
-	"Charts & Maps": "Karten & Pläne",
-	Charts: Charts$1,
-	Apex: Apex$1,
-	ChartJS: ChartJS$1,
-	Recharts: Recharts$1,
-	"Leaflet Maps": "Leaflet Maps",
-	Extensions: Extensions$1,
-	"Sweet Alerts": "Süßer Alarms",
-	Toastr: Toastr$1,
-	"Rc Slider": "Rc Slider",
-	"File Uploader": "Datei-Uploader",
-	"Wysiwyg Editor": "Wysiwyg Editor",
-	"Drag & Drop": "Ziehen und loslassen",
-	Tour: Tour$1,
-	"Auto Complete": "Automatisch vervollständigen",
-	Clipboard: Clipboard$1,
-	"Context Menu": "Kontextmenü",
-	Swiper: Swiper$1,
-	I18n: I18n$1,
-	Export: Export$1,
-	Import: Import$1,
-	"Export Selected": "Ausgewählte exportieren",
-	"Access Control": "Zugangskontrolle",
-	Others: Others$1,
-	"Menu Levels": "Menüebenen",
-	"Second Level": "zweites Level",
-	"Third Level": "Drittes Level",
-	"Disabled Menu": "Deaktiviertes Menü",
-	Documentation: Documentation$1,
-	"Raise Support": "Unterstützung erhöhen",
-	"Change Log": "Änderungsprotokoll",
-	text: text$1
+	menu: menu$1
+};
+
+const AppId = {
+  HOME: 'HOME',
+  USER: 'USER',
+  ACCOUNT: 'ACCOUNT',
+  BUY_INSURANCE: 'BUY_INSURANCE',
+  INSURANCE_FEE: 'INSURANCE_FEE'
+};
+
+const navigationConfig = [{
+  id: AppId.HOME,
+  title: 'menu.home',
+  icon: /*#__PURE__*/React.createElement(Home, {
+    size: 20
+  }),
+  navLink: '/'
+}, {
+  id: AppId.USER,
+  title: 'menu.user',
+  icon: /*#__PURE__*/React.createElement(Mail, {
+    size: 20
+  }),
+  permissions: ['admin', 'editor'],
+  navLink: 'http://localhost:3001'
+}];
+
+const getNativgationConfig = appId => {
+  return navigationConfig.map(item => {
+    item.type = item.id === appId ? 'item' : 'external-link';
+  });
 };
 
 const AppRouter = ({
   checkLoginStatus,
-  navigationConfig,
+  appId,
   isAuthentication,
   loginAction,
   authToken,
@@ -2785,20 +2378,22 @@ const AppRouter = ({
   }, []);
   const appMessage = {
     en: { ...messages_en,
-      ...message.en
+      [appId]: { ...message.en
+      }
     },
     vi: { ...messages_vi,
-      ...message.vi
+      [appId]: { ...message.vi
+      }
     }
   };
   return /*#__PURE__*/React.createElement(IntlProviderWrapper, {
     appMessage: appMessage
   }, /*#__PURE__*/React.createElement(Router, {
     history: history
-  }, /*#__PURE__*/React.createElement(Switch$2, null, /*#__PURE__*/React.createElement(Route, {
+  }, /*#__PURE__*/React.createElement(Switch, null, /*#__PURE__*/React.createElement(Route, {
     path: "/",
     render: props => isAuthentication ? /*#__PURE__*/React.createElement(Layout$1, Object.assign({
-      navigationConfig: navigationConfig
+      navigationConfig: getNativgationConfig(appId)
     }, props), children) : /*#__PURE__*/React.createElement(FullPageLayout, null, /*#__PURE__*/React.createElement(Login, {
       loginAction: loginAction
     }))
@@ -2838,7 +2433,7 @@ var LoadingSpinner$1 = connect(mapStateToProps$4)(LoadingSpinner);
 
 const App = ({
   children,
-  navigationConfig,
+  appId,
   appReducer,
   message
 }) => {
@@ -2854,7 +2449,7 @@ const App = ({
     persistor: persistor
   }, /*#__PURE__*/React.createElement(LoadingSpinner$1, null), /*#__PURE__*/React.createElement(AppRouter$1, {
     message: message,
-    navigationConfig: navigationConfig,
+    appId: appId,
     children: children
   }), /*#__PURE__*/React.createElement(ToastContainer, {
     position: "top-right",
@@ -2906,5 +2501,5 @@ function useWindowDimensions() {
   return windowDimensions;
 }
 
-export { App as BaseApp, FallbackSpinner, HttpClient, useDeviceDetect, useWindowDimensions };
+export { AppId, App as BaseApp, FallbackSpinner, HttpClient, useDeviceDetect, useWindowDimensions };
 //# sourceMappingURL=index.modern.js.map
