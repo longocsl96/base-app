@@ -1,6 +1,7 @@
 import React from 'react'
 import * as Icon from 'react-feather'
 import AppId from './appId'
+import { APP_URL } from './app-configs'
 
 const navigationConfig = [
   {
@@ -16,14 +17,19 @@ const navigationConfig = [
     title: 'menu.user',
     icon: <Icon.Mail size={20} />,
     permissions: ['admin', 'editor'],
-    navLink: 'http://localhost:3001'
+    navLink: '/'
   }
 ]
 
 const getNativgationConfig = (appId) => {
-  return navigationConfig.map((item) => {
-    item.type = item.id === appId ? 'item' : 'external-link'
-    return item;
+  return [...navigationConfig].map(item => {
+    if (item.id === appId) {
+      item.type = 'item'
+    } else {
+      item.type = 'external-link'
+      item.navLink = APP_URL[item.id] + item.navLink
+    }
+    return item
   })
 }
 

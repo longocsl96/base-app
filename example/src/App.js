@@ -1,50 +1,55 @@
-import 'base-app/dist/index.css'
-import React, { lazy, Suspense, useEffect } from 'react'
+import "base-app/index.css";
+import React, { lazy, Suspense, useEffect } from "react";
 
-import { HttpClient, FallbackSpinner, FormattedMessage, useWindowDimensions } from 'base-app'
-import navigationConfig from './navigationConfig'
-import emails from './redux/reducers/calendar/index'
+import {
+  HttpClient,
+  FallbackSpinner,
+  FormattedMessage,
+  useDeviceDetect,
+  AppId,
+} from "base-app"
 
-import { createBrowserHistory } from 'history'
-export let history = createBrowserHistory({ basename: '' })
+
+import { createBrowserHistory } from "history";
+export let history = createBrowserHistory({ basename: "" });
 
 const App = () => {
-
-  const {width , height} = useWindowDimensions()
-
+  // Check is mobile
+  const { isMobile } = useDeviceDetect();
   const message = {
     en: {
-      AppName: 'Home Page'
+      AppName : 'Home'
     },
     vi: {
-      AppName: 'Trang chủ'
+      AppName : 'Trang chủ'
     }
   }
 
   useEffect(() => {
-    fetchApi()
-  }, [])
+    fetchApi();
+  }, []);
 
+  // Using Http Client
   const fetchApi = async () => {
     const res = await HttpClient.get(
-      'https://jsonplaceholder.typicode.com/photos'
-    )
-  }
+      "https://jsonplaceholder.typicode.com/photos"
+    );
+  };
 
-  const BaseApp = lazy(() => import('./BasePage'))
+  const BaseApp = lazy(() => import("./BasePage"));
 
   return (
     <Suspense fallback={<FallbackSpinner />}>
       <BaseApp
         history={history}
-        appReducer={emails}
         message={message}
-        navigationConfig={navigationConfig}
+        appId={AppId.HOME}
       >
-        <FormattedMessage id={'AppName'} />
+        {/* Example Using translate text with format */}
+        <FormattedMessage id={`${AppId.HOME}.AppName`} />
       </BaseApp>
     </Suspense>
-  )
-}
+  );
+};
 
-export default App
+export default App;

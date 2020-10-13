@@ -58,7 +58,7 @@ const Footer = (props) => {
           </a>
         </div>
         <div>
-          <a class='tab-link'>
+          <a className='tab-link'>
             <Icon.MessageSquare />
           </a>
         </div>

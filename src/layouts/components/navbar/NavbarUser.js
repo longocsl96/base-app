@@ -17,6 +17,7 @@ import ReactCountryFlag from 'react-country-flag'
 import { history } from '../../../history'
 import { IntlContext } from '../../../utility/context/Internationalization'
 import Autocomplete from '../../../components/AutoCompleteComponent'
+import { FormattedMessage } from 'react-intl'
 
 const UserDropdown = (props) => {
   const { logoutAction } = props
@@ -31,10 +32,23 @@ const UserDropdown = (props) => {
       <DropdownItem
         tag='a'
         href='#'
-        onClick={(e) => handleNavigation(e, '/pages/profile')}
+        onClick={(e) => handleNavigation(e, '/account-information')}
       >
         <Icon.User size={14} className='mr-50' />
-        <span className='align-middle'>Edit Profile</span>
+        <span className='align-middle'>
+          <FormattedMessage id="setting.accountInformation"></FormattedMessage>
+        </span>
+      </DropdownItem>
+      <DropdownItem divider />
+      <DropdownItem
+        tag='a'
+        href='#'
+        onClick={(e) => handleNavigation(e, '/change-password')}
+      >
+        <Icon.Lock size={14} className='mr-50' />
+        <span className='align-middle'>
+          <FormattedMessage id="setting.changePassword"></FormattedMessage>
+        </span>
       </DropdownItem>
       <DropdownItem divider />
       <DropdownItem tag='a' onClick={logoutAction}>

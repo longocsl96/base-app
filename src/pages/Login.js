@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Lock, Mail } from 'react-feather'
 import { FormattedMessage } from 'react-intl'
-import { connect } from 'react-redux'
 import {
   Card,
   CardHeader,
@@ -10,7 +9,6 @@ import {
   Col,
   CardBody,
   FormGroup,
-  Form,
   Label,
   Button,
   Input

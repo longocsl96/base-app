@@ -1,7 +1,13 @@
 {
- "menu" : {
-   "home" : "Home",
-   "user" : "User Management",
-   "buyInsurance" : "Buy Insurance"
- }
+  "menu.home": "Home",
+  "menu.user": "User Management",
+  "menu.buyInsurance": "Buy Insurance",
+  "setting": "Setting",
+  "setting.accountInfromation": "Account Information",
+  "setting.changePassword": "Change password",
+  "setting.partnerCode": "Partner code",
+  "setting.referralCode": "Referral code",
+  "setting.completeAccount": "Your account had completed information",
+  "setting.unCompleteAccount": "Account need additional information",
+  "changePassword.passwordMustMatch" : "Password must match"
 }

@@ -16,8 +16,8 @@ export const checkLoginStatus = (code) => {
         dispatch({ type: LOGIN_ACTION, payload: respone.data })
       } else {
         dispatch({ type: LOOUT_ACTION })
+        history.push('/')
       }
-      history.push('/')
     } catch (error) {
       console.log(error)
     }

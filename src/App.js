@@ -8,14 +8,15 @@ import { persistStore } from 'redux-persist'
 import { setUpHttpClient } from './utility/HttpClient'
 import { ToastContainer } from 'react-toastify'
 import rootReducer from './redux/reducers/rootReducer'
-import AppRouter from './layouts/AppRouter'
+import AppRouter from './routes/AppRouter'
 import 'react-perfect-scrollbar/dist/css/styles.css'
 import 'prismjs/themes/prism-tomorrow.css'
 import './index.scss'
 import 'react-toastify/dist/ReactToastify.css'
 import LoadingSpinner from './components/Loading-spinner'
+import * as serviceWorker from "./serviceWorker"
 
-const App = ({ children, appId, appReducer, message }) => {
+const App = ({ children, appId, appReducer, message , navigationConfig }) => {
   const middlewares = [thunk, createDebounce()]
   const composeEnhancers =
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
@@ -37,6 +38,7 @@ const App = ({ children, appId, appReducer, message }) => {
         <AppRouter
           message={message}
           appId={appId}
+          navigationConfig={navigationConfig}
           children={children}/>
         <ToastContainer
           position='top-right'
@@ -49,5 +51,7 @@ const App = ({ children, appId, appReducer, message }) => {
     </Provider>
   )
 }
+
+serviceWorker.unregister()
 
 export default App

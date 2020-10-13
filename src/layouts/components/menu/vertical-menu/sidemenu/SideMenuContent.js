@@ -117,7 +117,7 @@ class SideMenuContent extends React.Component {
   }
 
   getExternalLink = (link) => {
-    return `${link}/?code=${this.props.currentUser.authToken}`
+    return `${link}?code=${this.props.currentUser.authToken}`
   }
 
   render() {

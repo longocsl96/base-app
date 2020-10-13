@@ -2,6 +2,8 @@
 export { default as BaseApp } from './App'
 export { default as HttpClient } from './utility/HttpClient'
 export { default as FallbackSpinner } from './components/Fallback-spinner'
+export { default as DatePicker } from './components/DatePicker'
+export { default as Radio } from './components/Radio'
 export { FormattedMessage } from 'react-intl'
 export { default as useWindowDimensions } from './customHooks/useWindowDimensions'
 export { default as useDeviceDetect } from './customHooks/useDeviceDetect'

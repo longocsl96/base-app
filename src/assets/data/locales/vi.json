@@ -1,8 +1,13 @@
 {
-  "menu" : {
-    "home" : "Trang chủ",
-    "user" : "Tài khoản",
-    "buyInsurance" : "Mua bảo hiểm"
-  }
- }
- 
+  "menu.home": "Trang chủ",
+  "menu.user": "Tài khoản",
+  "menu.buyInsurance": "Mua bảo hiểm",
+  "setting": "Cài đặt",
+  "setting.accountInformation": "Thông tin tài khoản",
+  "setting.changePassword": "Thay đổi mật khẩu",
+  "setting.partnerCode": "Mã đối tác",
+  "setting.referralCode": "Mã giới thiệu",
+  "setting.completeAccount": "Tài khoản đã hoàn thiện thông tin",
+  "setting.unCompleteAccount": "Tài khoản cần bổ sung thông tin",
+  "changePassword.passwordMustMatch": "Mật khẩu không trùng khớp"
+}
